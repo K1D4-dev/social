@@ -91,26 +91,24 @@
     </div>
     
     <script>
-        function detectTikTokBrowser() {
+        function detectBrowser() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
-            if (ua.includes("TikTok")) {
+            var isTikTok = ua.includes("TikTok");
+            var isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+            var isChrome = /chrome/i.test(ua) && !isSafari;
+            
+            if (isTikTok) {
                 document.getElementById("open-in-browser").style.display = "block";
             }
+            console.log("Safari:", isSafari, "Chrome:", isChrome, "TikTok:", isTikTok);
         }
 
         function openInBrowser() {
             var url = window.location.href;
-            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-                window.location = "googlechrome://" + url.replace(/^https?:\/\//, '');
-            } else {
-                window.location = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end;";
-            }
-            setTimeout(function() {
-                window.open(url, "_blank");
-            }, 500);
+            window.open(url, "_blank");
         }
 
-        detectTikTokBrowser();
+        detectBrowser();
     </script>
 </body>
 </html>
