@@ -6,6 +6,16 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
 
     <title>Мій профіль</title>
+    <script>
+    function openInDefaultBrowser() {
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        if (ua.indexOf("TikTok") > -1) {
+            window.location.href = "googlechrome://" + window.location.href.replace(/^https?:\/\//, '');
+        }
+    }
+    openInDefaultBrowser();
+</script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
