@@ -1,60 +1,17 @@
-<!DOCTYPE html>
-<html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <title>Мій профіль</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
-        .profile {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .profile img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .profile h2 {
-            margin: 10px 0;
-        }
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .social-links a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 18px;
-            margin: 8px 0;
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: 0.3s;
-            width: 200px;
-            justify-content: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
-        .social-links a i {
-            margin-right: 10px;
+
             font-size: 24px;
         }
         .instagram {
+            background: #E1306C;
             background: #E4405F;
         }
         .telegram {
@@ -63,52 +20,27 @@
         .tiktok {
             background: #000;
         }
+     
         .social-links a:hover {
             opacity: 0.8;
         }
-        #open-in-browser {
-            display: none;
-            background: red;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            margin-top: 15px;
-            cursor: pointer;
-        }
+      
     </style>
 </head>
+
 <body>
-    <div class="profile">
-        <img src="https://via.placeholder.com/120" alt="Фото профілю">
-        <h2>Ваше Ім'я</h2>
-        <div class="social-links">
-            <a href="instagram://user?username=ВАШ_НІКНЕЙМ" target="_blank" class="instagram"><i class="fab fa-instagram"></i> VISALD</a>
-            <a href="#" target="_blank" class="telegram"><i class="fab fa-telegram"></i> VISALD</a>
-            <a href="#" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i> VISALD</a>
-        </div>
-        <div id="open-in-browser" onclick="openInBrowser()">Відкрити в браузері</div>
+<div class="profile">
+    <img src="photo_2025-03-31_23-58-08.jpg" alt="Фото профілю">
+    <h2>Зоряна</h2>
+    <div class="social-links">
+        <a href="instagram://user?username=zorixqq" target="_blank" class="instagram"><i class="fab fa-instagram"></i>zorixqq</a>
+        <a href="https://t.me/zoriixxqq" target="_blank" class="telegram"><i class="fab fa-telegram"></i> zoriixxqq</a>
+        <a href="https://www.tiktok.com/@zorianaa_l" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i> zorianaa_l</a>
+      
+        <p>Якщо ви перейшли з тікток натисніть три крапки і відкрити в браузері</p>
     </div>
-    
-    <script>
-        function detectBrowser() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            var isTikTok = ua.includes("TikTok");
-            var isSafari = /^((?!chrome|android).)*safari/i.test(ua);
-            var isChrome = /chrome/i.test(ua) && !isSafari;
-            
-            if (isTikTok) {
-                document.getElementById("open-in-browser").style.display = "block";
-            }
-            console.log("Safari:", isSafari, "Chrome:", isChrome, "TikTok:", isTikTok);
-        }
-
-        function openInBrowser() {
-            var url = window.location.href;
-            window.open(url, "_blank");
-        }
-
-        detectBrowser();
+</div>
+        detectTikTokBrowser();
     </script>
 </body>
 </html>
