@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-
     <title>Мій профіль</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -58,7 +55,7 @@
             font-size: 24px;
         }
         .instagram {
-            background: #E1306C;
+            background: #E4405F;
         }
         .telegram {
             background: #0088cc;
@@ -66,46 +63,54 @@
         .tiktok {
             background: #000;
         }
-        .brouse {
-            background: #000;
-        }
         .social-links a:hover {
             opacity: 0.8;
         }
+        #open-in-browser {
+            display: none;
+            background: red;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 15px;
+            cursor: pointer;
+        }
     </style>
 </head>
-
-    <script>
-    function detectTikTokBrowser() {
-        var ua = navigator.userAgent || navigator.vendor || window.opera;
-        if (ua.includes("TikTok")) {
-            document.getElementById("open-in-browser").style.display = "block";
-        }
-    }
-
-    function openInBrowser() {
-        var url = window.location.href;
-        if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-            window.location = "googlechrome://" + url.replace(/^https?:\/\//, '');
-        } else {
-            window.location = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end;";
-        }
-    }
-
-    detectTikTokBrowser();
-</script>
 <body>
-<div class="profile">
-    <img src="photo_2025-03-31_23-58-08.jpg" alt="Фото профілю">
-    <h2>Зоряна</h2>
-    <div class="social-links">
-        <a href="instagram://user?username=zorixqq" target="_blank" class="instagram"><i class="fab fa-instagram"></i>zorixqq</a>
-        <a href="https://t.me/zoriixxqq" target="_blank" class="telegram"><i class="fab fa-telegram"></i> zoriixxqq</a>
-        <a href="https://www.tiktok.com/@zorianaa_l" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i> zorianaa_l</a>
-       <a id="open-in-browser" href="#" onclick="openInBrowser()" style="display: none; background: red; color: white; padding: 10px; border-radius: 5px; text-align: center;">Відкрити в браузері</a>
-
-
+    <div class="profile">
+        <img src="https://via.placeholder.com/120" alt="Фото профілю">
+        <h2>Ваше Ім'я</h2>
+        <div class="social-links">
+            <a href="instagram://user?username=ВАШ_НІКНЕЙМ" target="_blank" class="instagram"><i class="fab fa-instagram"></i> VISALD</a>
+            <a href="#" target="_blank" class="telegram"><i class="fab fa-telegram"></i> VISALD</a>
+            <a href="#" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i> VISALD</a>
+        </div>
+        <div id="open-in-browser" onclick="openInBrowser()">Відкрити в браузері</div>
     </div>
-</div>
+    
+    <script>
+        function detectTikTokBrowser() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            if (ua.includes("TikTok")) {
+                document.getElementById("open-in-browser").style.display = "block";
+            }
+        }
+
+        function openInBrowser() {
+            var url = window.location.href;
+            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+                window.location = "googlechrome://" + url.replace(/^https?:\/\//, '');
+            } else {
+                window.location = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end;";
+            }
+            setTimeout(function() {
+                window.open(url, "_blank");
+            }, 500);
+        }
+
+        detectTikTokBrowser();
+    </script>
 </body>
 </html>
